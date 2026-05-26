@@ -20,6 +20,8 @@ public class HotelService {
 
     /**
      * priceが、引数で渡されたprice以下のホテル情報を取得する.
+     * <p>
+     * priceがnull（未入力）の場合、ホテル情報を全件取得する。
      *
      * @param price 値段
      * @return 複数のホテル情報
