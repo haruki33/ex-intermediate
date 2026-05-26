@@ -7,7 +7,7 @@
 <body>
 <h1>ホテル検索</h1>
 <form action="search.html" th:action="@{/hotel/}" method="post">
-    <input type="number" name="price" id="price" class="price"> 円以下
+    <input type="number" name="price" id="price" class="price" th:value="${price}"> 円以下<br>
     <button>検索</button>
 </form>
 <div>
@@ -27,6 +27,9 @@
             </tr>
         </table>
     </div>
+</div>
+<div th:if="${price != null && #lists.isEmpty(hotelList)}">
+    <div th:text="${#numbers.formatInteger(price, 1, 'COMMA')}+円以下のホテル情報は存在しません"></div>
 </div>
 </body>
 </html>

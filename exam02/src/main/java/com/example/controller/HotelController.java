@@ -42,6 +42,7 @@ public class HotelController {
     public String result(Integer price, Model model) {
         List<Hotel> hotelList = service.searchByLessThanPrice(price);
         model.addAttribute("hotelList", hotelList);
+        model.addAttribute("price", price);
         return "search";
     }
 }
