@@ -10,10 +10,14 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Teamsテーブルを操作するリポジトリ.
+ */
 @Repository
 public class TeamRepository {
     @Autowired
     private NamedParameterJdbcTemplate template;
+
 
     private static final RowMapper<Team> TEAM_ROW_MAPPER = (rs, i) -> {
         return Team.builder()
@@ -26,6 +30,11 @@ public class TeamRepository {
                 .build();
     };
 
+    /**
+     * チーム全件取得する.
+     *
+     * @return チーム全件
+     */
     public List<Team> findAll() {
         String sql = """
                 SELECT
@@ -44,6 +53,12 @@ public class TeamRepository {
         return template.query(sql, TEAM_ROW_MAPPER);
     }
 
+    /**
+     * 指定されたIDのチーム情報を取得する.
+     *
+     * @param id ID
+     * @return 指定されたIDのチーム情報を取得する
+     */
     public Team findById(Long id) {
         String sql = """
                 SELECT

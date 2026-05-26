@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * チーム情報を管理するサービス
+ * チーム情報を管理するサービス.
  */
 @Service
 @Transactional
@@ -18,7 +18,7 @@ public class TeamService {
     private TeamRepository repository;
 
     /**
-     * チーム全件取得
+     * チーム全件取得.
      *
      * @return チーム情報（idとnameのみ）全件
      */
@@ -27,7 +27,7 @@ public class TeamService {
     }
 
     /**
-     * チーム詳細を取得
+     * チーム詳細を取得.
      *
      * @param id ID
      * @return チーム情報

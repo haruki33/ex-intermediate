@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 
 /**
- * 野球チームを表すドメイン
+ * 野球チームを表すドメイン.
  */
 public class Team {
     /**
