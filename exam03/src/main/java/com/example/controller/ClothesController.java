@@ -38,7 +38,13 @@ public class ClothesController {
      */
     @PostMapping("")
     public String search(String gender, String color, Model model) {
-        // genderまたはcolorがnullのときはどうする？
+        model.addAttribute("isValid", false);
+
+        if (gender == null || color == null) {
+            model.addAttribute("isValid", true);
+            model.addAttribute("message", "不正な値が指定されました。");
+            return "search";
+        }
         List<Clothes> clothesList = service.showClothes(Integer.parseInt(gender), color);
         model.addAttribute("clothesList", clothesList);
         return "search";

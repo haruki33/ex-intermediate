@@ -5,8 +5,8 @@
     <title>衣類検索（結果）画面</title>
 </head>
 <body>
-<h1>衣類検索</h1>
 <form action="search.html" th:action="@{/clothes}" method="post">
+    <h1>衣類検索</h1>
     <!--  [todo]cssで横並べにする-->
     <div>
         <input type="radio" name="gender" value="0" th:value="0">Man
@@ -23,6 +23,9 @@
     <button>検索</button>
 </form>
 <div>
+    <div th:if="${isValid}">
+        <p th:text="${message}">不正な値が指定されました。</p>
+    </div>
     <div th:each="clothes : ${clothesList}">
         <table border="1">
             <tr>
