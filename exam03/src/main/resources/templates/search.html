@@ -26,6 +26,11 @@
     <div th:if="${isValid}">
         <p th:text="${message}">不正な値が指定されました。</p>
     </div>
+
+    <div th:if="${isResultEmpty}">
+        <p th:text="${message}">検索条件に合うものはありません。</p>
+    </div>
+
     <div th:each="clothes : ${clothesList}">
         <table border="1">
             <tr>
