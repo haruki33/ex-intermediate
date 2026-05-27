@@ -25,7 +25,7 @@ public class ClothesService {
      * @param color  色
      * @return 該当する衣類情報のリスト
      */
-    public List<Clothes> showClothes(Integer gender, String color) {
+    public List<Clothes> searchClothes(Integer gender, String color) {
         return repository.findByGenderAndColor(gender, color);
     }
 }

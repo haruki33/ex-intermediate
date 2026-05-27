@@ -49,7 +49,7 @@ public class ClothesController {
         }
 
         model.addAttribute("isResultEmpty", false);
-        List<Clothes> clothesList = service.showClothes(Integer.parseInt(gender), color);
+        List<Clothes> clothesList = service.searchClothes(Integer.parseInt(gender), color);
         if (clothesList.isEmpty()) {
             model.addAttribute("isResultEmpty", true);
             model.addAttribute("message", "検索条件にあうものはありません。");
