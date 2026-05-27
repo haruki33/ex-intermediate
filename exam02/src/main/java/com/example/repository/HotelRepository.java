@@ -51,6 +51,8 @@ public class HotelRepository {
                     hotels
                 WHERE
                     price <= :price
+                ORDER BY
+                    price DESC
                 ;
                 """;
         SqlParameterSource param = new MapSqlParameterSource().addValue("price", price);

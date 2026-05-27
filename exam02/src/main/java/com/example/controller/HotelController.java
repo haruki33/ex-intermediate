@@ -27,7 +27,8 @@ public class HotelController {
      * @return 検索（結果）画面
      */
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("price", null);
         return "search";
     }
 
